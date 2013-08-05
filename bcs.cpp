@@ -7,7 +7,6 @@
 
 using namespace std;
 
-//Class for storing all of the relavent information from games.csv:
 class Games {
 public:
   vector<string> hTeam;
@@ -17,18 +16,12 @@ public:
 };
 
 Games readGames();
-
-//Instantiate global games class:
 Games games = readGames();
 
 vector<string> readRankings();
-
-//Intialize a string vector rankings for storing rankings.csv
 vector<string> rankings = readRankings();
 int getRank(string team);
 
-//Class for storing the game information in a graph where a 
-//win is represented as a directed tie:
 class Graph {
 public:
   set<string> teamSet;
@@ -38,11 +31,7 @@ public:
 };
 
 Graph loadGraph();
-
-//Instantiate global graph class:
 Graph graph = loadGraph();
-
-//These are the two functions used for the Depth-First Search:
 void resetVisited(bool * vis, int n);
 void explore(bool * vis, int v);
 
@@ -50,7 +39,7 @@ void explore(bool * vis, int v);
 int main() {
 
   ofstream output;
-  output.open("results.txt");
+  output.open("output/results.txt");
   //Get Type I Inconsistencies:
   set<vector<string> > incon1;
   vector<string> tempIncon1;
@@ -73,8 +62,7 @@ int main() {
       }
     }
   }
-
-  //Print Type I Inconsistencies:
+  
   output << endl;
   output << "Type I Inconsistencies: " << endl;
   output << endl;
@@ -111,9 +99,8 @@ int main() {
     }
   }
 
-  //Print Type II Inconsistencies:
   output << endl;
-  output << "Type II Inconsistencies: " << endl;
+  output << "Type I Inconsistencies: " << endl;
   output << endl;
   set<set<int> >::iterator it2;
   count = 0;
