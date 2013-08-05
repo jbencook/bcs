@@ -1,0 +1,15 @@
+CSCE 235 Bonus Assignment
+Author: Ben Cook
+CSE Login: jcook
+Date: 12/7/2012
+
+The program bcs.cpp can be compiled on the command line with the following command:
+
+    g++ bcs.cpp -o bcs
+
+The program can then be run on the command line with the following command:
+    
+    ./bcs
+
+The program takes games.csv and rankings.csv as input and outputs the results in 
+the file results.txt.
